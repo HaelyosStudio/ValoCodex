@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agents
+{% endblock %}
+
+{% block body %}
+	<h2 class="agentsTitle">Agents</h2>
+
+	<div class="mainWeaponAgentContainer">
+		<div class="weaponAgentList">
+			{% for agent in agents %}
+				<a href="{{ path('app_agent_details', {'id': agent.id}) }}" class="weaponBox agentBox">
+					<img src="{{ asset('valo_images/' ~ agent.imageName) }}" class="agentImage">
+
+					<div class="weaponAgentInfos">
+						<span>{{agent.name}}</span>
+					</div>
+				</a>
+			{% else %}
+				<div>No weapons found</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

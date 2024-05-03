@@ -1,0 +1,26 @@
+@import url(./root.css);
+
+.navBarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--tertiaryColor) !important;
+    color: var(--mainColor) !important;
+    height: 75px;
+    z-index: 1000;
+
+    .brandColor {
+        color: var(--secondaryColor);
+    }
+
+    a {
+        color: var(--secondaryColor) !important;
+    }
+
+    .dropDownItems {
+        color: var(--tertiaryColor) !important;
+    }
+
+}
+

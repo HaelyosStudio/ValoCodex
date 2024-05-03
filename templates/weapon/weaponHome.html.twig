@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Weapons
+{% endblock %}
+
+{% block body %}
+	<h2>Weapons</h2>
+	<div class="mainWeaponAgentContainer">
+		<div class="weaponAgentList">
+			{% for weapon in weapons %}
+				<a href="{{ path('app_weapon_details', {'id': weapon.id}) }}" class="weaponBox">
+					<img src="{{ asset('valo_images/weapons/' ~ weapon.imageName) }}" class="weaponImage">
+
+					<div class="weaponAgentInfos">
+						<span>{{weapon.name}}</span>
+						<div class="price">
+							<img src="{{ asset('Images/currency.svg') }}" alt="Currency" style="color: var(--mainColor);">
+							<span>{{ weapon.price }}</span>
+						</div>
+					</div>
+
+				</a>
+			{% else %}
+				<div>No weapons found</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

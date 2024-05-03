@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agent Details
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col-md-6 mx-auto ">
+				<div class="card agentCard">
+					<img src="{{ asset('valo_images/' ~ agent.imageName) }}" class="card-img-top" alt="...">
+					<div class="card-body cardBodyBox">
+						<h2 class="card-title agentName">{{ agent.name }}</h2>
+						<a href="{{ path('app_agent')}}" class="goBackButton">Go to agents list</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+.agentBox {
+  height: 300px !important;
+}
+
+.agentCard {
+  background-color: var(--tertiaryColor);
+  padding: 25px;
+
+  .cardBodyBox {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .agentName {
+      color: var(--mainColor);
+    }
+
+    .goBackButton {
+      position: relative;
+      text-decoration: none;
+      width: 175px;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: var(--mainColor);
+      color: var(--secondaryColor);
+      cursor: pointer;
+      text-align: center;
+      z-index: 20;
+      transition-duration: 0.5s;
+      overflow: hidden;
+    }
+
+    .goBackButton:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 125%;
+      height: 100%;
+      background: var(--tertiaryColor);
+      z-index: -1;
+      transform: translateX(-125%) skewX(30deg);
+      transition: transform 0.5s ease;
+    }
+
+    .goBackButton:hover {
+      color: var(--mainColor);
+      box-shadow: var(--mainColor) 0px 0px 10px, var(--mainColor) 0px 0px 10px;
+      border: 2px solid var(--mainColor);
+    }
+
+    .goBackButton:hover:before {
+      transform: translateX(-15px) skewX(30deg);
+    }
+  }
+}

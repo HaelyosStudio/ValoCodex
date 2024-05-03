@@ -1,3 +1,102 @@
+@import url(./root.css);
+@import url(./navBar.css);
+@import url(./weaponList.css);
+@import url(./agentList.css);
+
 body {
-    background-color: skyblue;
+  background-color: var(--secondaryColor);
+  margin: 0;
+  padding: 85px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainContainer {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+
+  .backgroundVideoBox {
+    display: flex;
+    justify-content: center;
+    height: 78dvh;
+    width: 100dvw;
+    overflow: hidden;
+
+    #backgroundVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -5;
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+    }
+
+    .overlay {
+      width: 100%;
+      height: 78dvh;
+      position: absolute;
+      border: 25px solid var(--secondaryColor);
+      z-index: 10;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 152px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 97%;
+  height: 75px;
+  min-width: 20%;
+  padding: 20px;
+  z-index: 5;
+}
+
+.signInButton {
+  position: absolute;
+  text-decoration: none;
+  width: 125px;
+  font-size: 18px;
+  padding: 10px;
+  bottom: 165px;
+  border: none;
+  border-radius: 5px;
+  background: var(--mainColor);
+  color: var(--secondaryColor);
+  cursor: pointer;
+  text-align: center;
+  z-index: 20;
+  transition-duration: 0.5s;
+  overflow: hidden;
+}
+
+.signInButton:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 125%;
+  height: 100%;
+  background: var(--tertiaryColor);
+  z-index: -1;
+  transform: translateX(-125%) skewX(30deg);
+  transition: transform 0.5s ease;
+}
+
+.signInButton:hover {
+  color: var(--mainColor);
+  box-shadow: var(--mainColor) 0px 0px 10px, var(--mainColor) 0px 0px 10px;
+  border: 2px solid var(--mainColor);
+}
+
+.signInButton:hover:before {
+  transform: translateX(-15px) skewX(30deg);
 }

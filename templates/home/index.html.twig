@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<div class="mainContainer">
+		<div class="backgroundVideoBox">
+			<video autoplay loop id="backgroundVideo">
+				<source src="{{ asset('Images/agentBackgrounds/Video_valorant.mp4') }}" type="video/mp4">
+			</video>
+			<div class="overlay"></div>
+			<div class="content"></div>
+			<a class="signInButton" href="{{ path('app_login')}}">Sign in</a>
+		</div>
+	</div>
+
+
+{% endblock %}
